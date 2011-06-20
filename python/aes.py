@@ -643,6 +643,40 @@ def generateRandomKey(keysize):
         raise ValueError, emsg % keysize
     return os.urandom(keysize)
 
+def encrypt(plaintext, key):
+    """
+     Encrypts text easily: assumes that the key size is 16, the input is a str and a hex encoded str is wanted
+     as output
+    """
+
+    padded = plaintext if not len(plaintext)%16 else plaintext + ' '*(16*(len(plaintext)/16+1)-len(plaintext))
+    crypto = AES()
+    return ''.join(
+                map(chr, crypto.encrypt(
+                        map(ord, padded),
+                        map(ord, key),
+                        16
+                    ))
+            ).encode('hex')
+
+def decrypt(cipher, key):
+    """Decrypts text assuming that it was encrypted with a keysize of 16 and that the input is hex encoded and 
+       a str is wanted as output
+    """
+    crypto = AES()
+    try:
+        decoded = cipher.decode('hex')
+    except TypeError:
+        raise
+
+    return ''.join(
+                map(chr, crypto.decrypt(
+                            map(ord, decoded),
+                            map(ord, key),
+                            16
+                    ))
+            ).strip()
+
 if __name__ == "__main__":
     moo = AESModeOfOperation()
     cleartext = "This is a test!"
