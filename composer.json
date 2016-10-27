@@ -1,0 +1,12 @@
+{
+	"name": "escolarea-labs/slowaes",
+	"description": "AES Library written in pure PHP",
+	"license" : "Apache-2.0",
+	"autoload": {
+		"classmap": [ 
+			"php/aes_fast.php",
+			"php/cryptoHelpers.php"
+		]
+	}
+}
+
