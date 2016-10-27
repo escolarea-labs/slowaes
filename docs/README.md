@@ -5,7 +5,7 @@ These wiki pages are created from original [google code wiki pages](https://code
 Google code is Dead now, I think it should be attached here, to the repository. I Also made some reformat of code snippets, to make them more readable. 
 
 ## Pages
- - [FIPS Test Vectors](FIPSTestVectors) 
- - [Mix Columns Speed](MixColumnsSpeed)
- - [OpenSSL Standards](OpenSSL-Standards)
+ - [FIPS Test Vectors](FIPSTestVectors.md)
+ - [MixColumnsSpeed Speed](MixColumnsSpeed.md)
+ - [OpenSSL Standards](OpenSSLStandards.md)
 
