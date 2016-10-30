@@ -98,5 +98,3 @@ class cryptoHelpers {
 		return self::convertStringToByteArray(base64_decode($b));
 	}
 };
-
-var_dump(cryptoHelpers::base64_decode('BBB'));

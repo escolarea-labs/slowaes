@@ -323,7 +323,7 @@ class AES {
 	private static function invMain($state, $expandedKey, $nbrRounds){
 			$state = self::addRoundKey($state, self::createRoundKey($expandedKey,16*$nbrRounds));
 			for ($i = $nbrRounds-1; $i > 0; $i--)
-				$state = self::invRound($state, self::createRoundKey($expandedKey,16*i));
+				$state = self::invRound($state, self::createRoundKey($expandedKey,16*$i));
 			$state = self::shiftRows($state,true);
 			$state = self::subBytes($state,true);
 			$state = self::addRoundKey($state, self::createRoundKey($expandedKey,0));
